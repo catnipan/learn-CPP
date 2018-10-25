@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "./util/list_node.h"
+#include "./util/list_node.cpp"
 
 using namespace std;
 
@@ -42,5 +42,3 @@ int main() {
   print(ln2);
   print(s.addTwoNumbers(ln1, ln2));
 }
-
-// g++ ./2_add_two_numbers.cpp ./util/list_node.cpp -std=c++11 -o ./build/2_add_two_numbers && ./build/2_add_two_numbers

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <map>
-#include "./util/print_int_vector.h"
+#include "./util/print_int_vector.cpp"
 
 using namespace std;
 
@@ -42,4 +42,4 @@ int main() {
   print(s.twoSum(nums, target));
 }
 
-// g++ ./1_two_sum.cpp ./util/print_int_vector.cpp -std=c++11 -o ./build/1_two_sum && ./build/1_two_sum
+// g++ ./1.cpp -std=c++11 -o ./build/1 && ./build/1
