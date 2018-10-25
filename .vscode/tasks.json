@@ -1,0 +1,23 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "debugTemp",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "${workspaceRoot}/dsacpp/sort/bubbleSort.cpp",
+        "-std=c++11",
+        "-g",
+        "-o",
+        "${workspaceRoot}/build/temp_debug",
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+  ]
+}
