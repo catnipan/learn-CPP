@@ -1,8 +1,13 @@
 #include <iostream>
 #include <vector>
-#include "./list_node.h"
 
 using namespace std;
+
+struct ListNode{
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
 
 void print(ListNode* node) {
   while (true) {
