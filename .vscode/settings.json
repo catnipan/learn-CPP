@@ -10,6 +10,18 @@
     "stdexcept": "cpp",
     "type_traits": "cpp",
     "typeinfo": "cpp",
-    "algorithm": "cpp"
+    "algorithm": "cpp",
+    "vector": "cpp",
+    "iosfwd": "cpp",
+    "iterator": "cpp",
+    "string": "cpp",
+    "map": "cpp",
+    "__locale": "cpp",
+    "__bit_reference": "cpp",
+    "__split_buffer": "cpp",
+    "__tree": "cpp",
+    "string_view": "cpp",
+    "__functional_03": "cpp",
+    "functional": "cpp"
   }
 }
