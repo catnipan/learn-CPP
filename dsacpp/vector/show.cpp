@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 template <typename T>
-void Vector<T>::print(Rank lo, Rank hi) {
+void Vector<T>::show(Rank lo, Rank hi) {
   cout << "[";
   for (int i = lo; i < hi - 1; i++) {
     cout << _elem[i] << ",";

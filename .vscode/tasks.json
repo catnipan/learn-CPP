@@ -8,7 +8,7 @@
       "type": "shell",
       "command": "g++",
       "args": [
-        "${workspaceRoot}/dsacpp/sort/bubbleSort.cpp",
+        "${workspaceRoot}/dsacpp/vector_test.cpp",
         "-std=c++11",
         "-g",
         "-o",

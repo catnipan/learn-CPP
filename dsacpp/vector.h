@@ -72,19 +72,22 @@ public:
   void traverse(void(*)(T &));
   template<typename VST> void traverse(VST&);
 
-  void print(Rank lo, Rank hi);
-  void print() { print(0, _size); };
+  void show(Rank lo, Rank hi);
+  void show() { show(0, _size); };
 };
 
 #include "vector/_copyFrom.cpp"
 #include "vector/_expand.cpp"
 #include "vector/_shrink.cpp"
+#include "vector/deduplicate.cpp"
+#include "vector/disordered.cpp"
+#include "vector/find.cpp"
+#include "vector/insert.cpp"
 #include "vector/operator_assignment.cpp"
 #include "vector/operator_bracket.cpp"
+#include "vector/remove.cpp"
+#include "vector/traverse.cpp"
 #include "vector/unsort.cpp"
+#include "vector/uniquify.cpp"
 
-#include "vector/print.cpp"
-
-
-Vector<int> range(int lo, int hi);
-#include "vector/range.cpp"
+#include "vector/show.cpp"
