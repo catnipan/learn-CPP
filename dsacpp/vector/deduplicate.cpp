@@ -8,3 +8,9 @@ template <typename T> int Vector<T>::deduplicate() {
   }
   return oldSize - _size;
 }
+
+// each call of find takes O(n)
+// in total it's O(n^2)
+
+// TODO
+// store each element we meet in a set (only if data type T can be compared)

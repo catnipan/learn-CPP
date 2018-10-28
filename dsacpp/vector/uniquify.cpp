@@ -11,7 +11,7 @@
 // }
 
 // in the above algorithm, each call to remove need O(n)
-// in total it's O(n2)
+// in total it's O(n^2)
 
 template <typename T>
 int Vector<T>::uniquify() {
