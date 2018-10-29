@@ -1,7 +1,6 @@
 #include <string>
 #include <algorithm>
 #include <iostream>
-#include <set>
 
 using namespace std;
 
@@ -10,7 +9,7 @@ public:
     int lengthOfLongestSubstring(string s) {
         int max_record = 0;
         int len = s.length();
-        set<char> chr_set;
+        bool chr_set[256]{false};
         int i = 0;
         int j = 0;
         while (true) {
@@ -18,19 +17,20 @@ public:
             break;
           }
           char new_chr = s[j];
-          if (chr_set.find(new_chr) == chr_set.end()) {
-            chr_set.insert(new_chr);
-            j++;
-          } else {
-            // move i forward, delete until delete new_chr before
+          if (chr_set[new_chr]) {
             while (s[i] != new_chr) {
-              chr_set.erase(s[i]);
+              chr_set[s[i]] = false;
               i++;
             }
-            chr_set.erase(s[i]);
+            chr_set[s[i]] = false;
             i++;
+          } else {
+            chr_set[new_chr] = true;
+            j++;
           }
-          max_record = max(j-i, max_record);
+          if (j - i > max_record) {
+            max_record = j - i;
+          }
         }
         return max_record;
     }
