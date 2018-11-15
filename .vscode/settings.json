@@ -22,7 +22,8 @@
     "__tree": "cpp",
     "string_view": "cpp",
     "__functional_03": "cpp",
-    "functional": "cpp"
+    "functional": "cpp",
+    "set": "cpp"
   },
   "code-runner.executorMap": {
     "cpp": "cd $dir && g++ $fileName -std=c++11 -o $workspaceRoot/build/$fileNameWithoutExt && $workspaceRoot/build/$fileNameWithoutExt",
