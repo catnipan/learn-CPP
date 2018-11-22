@@ -17,4 +17,5 @@ static Rank fibSearch(T* A, T const& e, Rank lo, Rank hi) {
       return mi;
     }
   }
+  return -1;
 }

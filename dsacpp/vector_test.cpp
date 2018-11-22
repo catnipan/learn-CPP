@@ -22,9 +22,13 @@ int main() {
   // iv.uniquify();
   // iv.show();
 
-  for(int i = 0; i < 20; i++) {
-    Fib fib{i};
-    cout << fib.get() << endl;
-  }
+  // int ia1[]{1,2,4,7,15,23,30,49,56,57,67,87,98,103,122,134};
+  // Vector<int> iv1(ia1, sizeof(ia1) / sizeof(*ia1));
+  // cout << iv1.search(103) << endl;
 
+  int ia2[]{1,4,34,34,3,4,5,1234,12,54,235,23,52,3,623,52,423};
+  Vector<int> iv2(ia2, sizeof(ia2) / sizeof(*ia2));
+  iv2.show();
+  iv2.sort();
+  iv2.show();
 }
