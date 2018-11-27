@@ -1,5 +1,7 @@
 #pragma once
 
+#include <initializer_list>
+
 typedef int Rank;
 #define DEFAULT_CAPACITY 3
 
@@ -36,6 +38,7 @@ public:
   Vector(T const* A, Rank lo, Rank hi) { copyFrom(A, lo, hi); }
   Vector(Vector<T> const& V) { copyFrom(V._elem, 0, V._size); }
   Vector(Vector<T> const& V, Rank lo, Rank hi) { copyFrom(V._elem, lo, hi); }
+  Vector(std::initializer_list<T> il);
 
   ~Vector() { delete [] _elem; }
 
@@ -80,6 +83,7 @@ public:
 #include "vector/_expand.cpp"
 #include "vector/_shrink.cpp"
 #include "vector/bubbleSort.cpp"
+#include "vector/constructor.cpp"
 #include "vector/deduplicate.cpp"
 #include "vector/disordered.cpp"
 #include "vector/find.cpp"
