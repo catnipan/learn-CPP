@@ -1,6 +1,7 @@
 #pragma once
 
 #include <initializer_list>
+#include <iostream>
 #include "./list_node.h"
 
 template <typename T> class List {
@@ -69,7 +70,8 @@ public:
   template <typename S> List<S> flatMap(List<S> (*) (const T&));
   void traverse(void (*) (T&));
   template <typename VST> void traverse(VST&);
-  void show();
+  template <typename S>
+  friend std::ostream& operator<<(std::ostream& out, const List<S>& ls);
 };
 
 #include "list/bracket.cpp"
@@ -84,5 +86,7 @@ public:
 #include "list/init.cpp"
 #include "list/insert.cpp"
 #include "list/remove.cpp"
-#include "list/show.cpp"
+#include "list/ostream.cpp"
 #include "list/traverse.cpp"
+#include "list/search.cpp"
+#include "list/uniquify.cpp"

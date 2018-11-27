@@ -30,6 +30,11 @@ int main () {
   // List<int> c{7,8,9};
   // List<List<int>> abc{a, b, c};
   // mconcat(abc).show();
-  List<int> x{4,3,1};
-  x.flatMap(fmapFunction).show();
+  // List<int> x{4,3,1};
+  // x.flatMap(fmapFunction).show();
+
+  List<int> xxx{1,2,2,2,3,3,3,4,4,6,7,8,9};
+  cout << xxx << endl;
+  cout << xxx.search(7) -> data << endl;
+
 }

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <initializer_list>
 
 typedef int Rank;
@@ -75,8 +76,9 @@ public:
   void traverse(void(*)(T &));
   template<typename VST> void traverse(VST&);
 
-  void show(Rank lo, Rank hi);
-  void show() { show(0, _size); };
+  // no need to be a friend
+  // template <typename S>
+  // friend std::ostream& operator<<(std::ostream&, vector<S>&);
 };
 
 #include "vector/_copyFrom.cpp"
@@ -91,11 +93,10 @@ public:
 #include "vector/mergeSort.cpp"
 #include "vector/operator_assignment.cpp"
 #include "vector/operator_bracket.cpp"
+#include "vector/ostream.cpp"
 #include "vector/remove.cpp"
 #include "vector/search.cpp"
 #include "vector/sort.cpp"
 #include "vector/traverse.cpp"
 #include "vector/unsort.cpp"
 #include "vector/uniquify.cpp"
-
-#include "vector/show.cpp"
