@@ -33,8 +33,13 @@ int main () {
   // List<int> x{4,3,1};
   // x.flatMap(fmapFunction).show();
 
-  List<int> xxx{1,2,2,2,3,3,3,4,4,6,7,8,9};
-  cout << xxx << endl;
-  cout << xxx.search(7) -> data << endl;
+  // List<int> xxx{1,2,2,2,3,3,3,4,4,6,7,8,9};
+  // cout << xxx << endl;
+  // cout << xxx.search(7) -> data << endl;
+  List<int> yyy{3,2,4,1};
+  cout << yyy << endl;
+  yyy.sort();
+  cout << yyy << endl;
+  // cout << yyy.selectMax(yyy.first(), 1)->data << endl;
 
 }

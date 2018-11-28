@@ -14,8 +14,8 @@ protected:
   void init();
   int clear();
   void copyNodes(ListNodePosi(T), int);
-  void merge(ListNodePosi(T)&, int, List<T>&, ListNodePosi(T), int);
-  void mergeSort(ListNodePosi(T)&, int);
+  void mergeSort(ListNodePosi(T)& p, int n);
+  void merge(ListNodePosi(T)& p, int n, List<T>& L, ListNodePosi(T)& q, int m);
   void selectionSort(ListNodePosi(T), int);
   void insertionSort(ListNodePosi(T), int);
 
@@ -47,7 +47,7 @@ public:
   ListNodePosi(T) search(T const& e, int n, ListNodePosi(T) p) const;
   ListNodePosi(T) selectMax(ListNodePosi(T) p, int n);
   ListNodePosi(T) selectMax() {
-    return selectMax(header->succ, _size);
+    return selectMax(first(), _size);
   }
 
   ListNodePosi(T) insertAsFirst(T const& e);
@@ -55,9 +55,7 @@ public:
   ListNodePosi(T) insertAfter(ListNodePosi(T) p, T const& e);
   ListNodePosi(T) insertBefore(ListNodePosi(T) p, T const& e);
   T remove(ListNodePosi(T) p);
-  void merge(List<T>& L) {
-    merge(first(), _size, L, L.first, L._size);
-  }
+
   void sort(ListNodePosi(T) p, int n);
   void sort() { sort(first(), _size); }
   int deduplicate();
@@ -87,6 +85,11 @@ public:
 #include "list/insert.cpp"
 #include "list/remove.cpp"
 #include "list/ostream.cpp"
+#include "list/sort.cpp"
+#include "list/insertionSort.cpp"
+#include "list/selectionSort.cpp"
+#include "list/selectMax.cpp"
+#include "list/mergeSort.cpp"
 #include "list/traverse.cpp"
 #include "list/search.cpp"
 #include "list/uniquify.cpp"
