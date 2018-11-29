@@ -36,8 +36,11 @@ int main () {
   // List<int> xxx{1,2,2,2,3,3,3,4,4,6,7,8,9};
   // cout << xxx << endl;
   // cout << xxx.search(7) -> data << endl;
-  List<int> yyy{3,2,4,1};
-  cout << yyy << endl;
+  List<int> xxx{3,2,4,1};
+  xxx.sort();
+  cout << xxx << endl;
+
+  List<int> yyy{3,6,3,1,9,10,34,52,2,4,1};
   yyy.sort();
   cout << yyy << endl;
   // cout << yyy.selectMax(yyy.first(), 1)->data << endl;
