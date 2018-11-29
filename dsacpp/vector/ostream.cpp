@@ -5,7 +5,7 @@ template <typename S>
 std::ostream& operator<<(std::ostream& out, Vector<S>& vc) {
   out << "[ ";
   int i = 0;
-  for (; i < vc.size(); i++) {
+  for (; i < vc.size() - 1; i++) {
     out << vc[i] << ", ";
   }
   out << vc[i] << " ]";
