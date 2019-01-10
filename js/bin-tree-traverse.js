@@ -129,7 +129,56 @@ const postOrderTraverseR = visit => tree => {
 }
 
 const postOrderTraverseI = visit => tree => {
-  // to be done
+  let node = tree;
+  const stack = [];
+
+  const expand = (_node) => {
+    let node = _node;
+    stack.push([node, undefined]);
+    while (node) {
+      if (node.left) {
+        stack.push([node.left, node.right]);
+        node = node.left;
+      } else if (node.right) {
+        stack.push([node.right, undefined]);
+        node = node.right;
+      } else {
+        break;
+      }
+    }
+  }
+
+  expand(node);
+
+  while (true) {
+    if (stack.length === 0) {
+      break;
+    }
+    let [node, nodeCousin] = stack.pop();
+    visit(node.data);
+    if (nodeCousin) {
+      expand(nodeCousin);
+    }
+  }
+}
+
+const levelOrderTraverseI = visit => tree => {
+  const queue = [];
+  let node = tree;
+  queue.push(node);
+  while (true) {
+    if (queue.length === 0) {
+      break;
+    }
+    node = queue.shift();
+    visit(node.data);
+    if (node.left) {
+      queue.push(node.left);
+    }
+    if (node.right) {
+      queue.push(node.right);
+    }
+  }
 }
 
 const toStringList = (traverse, log) => tree => {
@@ -145,3 +194,5 @@ console.log(toStringList(preOrderTraverseI)(tree1));
 console.log(toStringList(inOrderTraverseR)(tree1));
 console.log(toStringList(inOrderTraverseI)(tree1));
 console.log(toStringList(postOrderTraverseR)(tree1));
+console.log(toStringList(postOrderTraverseI)(tree1));
+console.log(toStringList(levelOrderTraverseI)(tree1));
