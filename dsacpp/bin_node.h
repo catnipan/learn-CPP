@@ -49,4 +49,4 @@ template <typename T> struct BinNode {
 #include "bin_node/trav_pre.cpp"
 #include "bin_node/trav_in.cpp"
 #include "bin_node/trav_post.cpp"
-
+#include "bin_node/trav_level.cpp"
