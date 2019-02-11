@@ -62,3 +62,5 @@ public:
 };
 
 #include "graph/bfs.cpp"
+#include "graph/dfs.cpp"
+#include "graph/t_sort.cpp"
