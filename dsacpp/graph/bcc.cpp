@@ -36,7 +36,7 @@ void Graph<Tv, Te>::BCC(int v, int& clock, Stack<int>& S) {
           // 遍历返回后，发现 u 通过后向边指向v的真祖先
           hca(v) = min(hca(v), hca(u)); // 则 v 也比如此
         } else { // 否则，以 v 为关节点
-          // 弹出 v 以上的元素
+          // 弹出 v 以上的元素，弹出的元素组成一个双连通域
           while (v != S.pop());
           S.push(v);
         }

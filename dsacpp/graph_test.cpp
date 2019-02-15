@@ -44,10 +44,23 @@ int main() {
   tpgraph.insert("ce",1,2,4);
   tpgraph.insert("ef",1,4,5);
 
-  Stack<char>* s = tpgraph.tSort(2);
-  while (!s->empty()) {
-    auto d = s->pop();
-    cout << d << ">";
-  }
-  cout << endl;
+  // Stack<char>* s = tpgraph.tSort(2);
+  // while (!s->empty()) {
+  //   auto d = s->pop();
+  //   cout << d << ">";
+  // }
+  // cout << endl;
+
+  // 双连通域分解
+  GraphMatrix<char, string> bccgraph{};
+  bccgraph.insert('A');
+  bccgraph.insert('B');
+  bccgraph.insert('C');
+  bccgraph.insert('D');
+  bccgraph.insert('E');
+  bccgraph.insert('F');
+  bccgraph.insert('G');
+  bccgraph.insert('H');
+  bccgraph.insert('I');
+  bccgraph.insert('J');
 }
