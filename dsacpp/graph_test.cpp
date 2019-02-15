@@ -26,5 +26,41 @@ int main() {
   gm.insert("gf",1,6,5);
   gm.insert("gb",1,6,1);
 
-  gm.bfs(7);
+  // gm.dfs(7);
+
+  // test topological sorting
+  GraphMatrix<char, string> tpgraph{};
+  tpgraph.insert('A'); // 0
+  tpgraph.insert('B'); // 1
+  tpgraph.insert('C'); // 2
+  tpgraph.insert('D'); // 3
+  tpgraph.insert('E'); // 4
+  tpgraph.insert('F'); // 5
+  tpgraph.insert("ac",1,0,2);
+  tpgraph.insert("ad",1,0,3);
+  tpgraph.insert("cd",1,2,3);
+  tpgraph.insert("bc",1,1,2);
+  tpgraph.insert("cf",1,2,5);
+  tpgraph.insert("ce",1,2,4);
+  tpgraph.insert("ef",1,4,5);
+
+  // Stack<char>* s = tpgraph.tSort(2);
+  // while (!s->empty()) {
+  //   auto d = s->pop();
+  //   cout << d << ">";
+  // }
+  // cout << endl;
+
+  // 双连通域分解
+  GraphMatrix<char, string> bccgraph{};
+  bccgraph.insert('A');
+  bccgraph.insert('B');
+  bccgraph.insert('C');
+  bccgraph.insert('D');
+  bccgraph.insert('E');
+  bccgraph.insert('F');
+  bccgraph.insert('G');
+  bccgraph.insert('H');
+  bccgraph.insert('I');
+  bccgraph.insert('J');
 }
