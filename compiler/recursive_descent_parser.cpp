@@ -1,36 +1,8 @@
 #include <iostream>
 #include <string>
+#include "./parser.h"
 
 using namespace std;
-
-class Parser {
-public:
-  void run(const string& s) {
-    lookahead = s.begin();
-    try {
-      parse(s);
-      if (lookahead != s.end()) {
-        report_error();
-      }
-      cout << "parse '" << s << "' : ok" << endl;
-    } catch (const string& err) {
-      cout << "parse '" << s << "' : " << err << endl;
-    }
-  }
-protected:
-  virtual void parse(const string& s) = 0;
-  string::const_iterator lookahead;
-  void report_error() {
-    throw string("syntax error");
-  }
-  void match(const char& chr) {
-    if (*lookahead == chr) {
-      lookahead++;
-    } else {
-      report_error();
-    }
-  }
-};
 
 // S -> + S S | - S S | a
 class Parser1: public Parser {
