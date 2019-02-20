@@ -16,21 +16,21 @@ function* permutationR(A) {
 }
 
 class Node {
-  constructor(i, j) {
-    this.i = i;
-    this.j = j;
+  constructor(base, target) {
+    this.base = base;
+    this.target = target;
   }
   isValid(max) {
-    return (this.i < max && this.j < max);
+    return (this.base < max && this.target < max);
   }
   swap(array) {
-    [array[this.i], array[this.j]] = [array[this.j], array[this.i]];
+    [array[this.base], array[this.target]] = [array[this.target], array[this.base]];
   }
   getFirstChild() {
-    return new Node(this.i+1, this.i+1);
+    return new Node(this.i+base, this.i+target);
   }
   getCousin() {
-    return new Node(this.i, this.j+1);
+    return new Node(this.base, this.target+1);
   }
 }
 
@@ -70,6 +70,6 @@ function* permutationI(A) {
   }
 }
 
-for (var permu of permutationR([1,2,3])) {
+for (var permu of permutationR(['a','b','c'])) {
   console.log(permu);
 }
