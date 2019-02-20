@@ -18,6 +18,10 @@ public:
 int main() {
   Solution s{};
   for (int i = 0; i < 100; i++) {
-    cout << i << "\t" << s.isUgly(i) << endl;
+    if (s.isUgly(i)) {
+      cout << i << ' ';
+    }
+    // cout << i << "\t" << s.isUgly(i) << endl;
   }
+  cout << endl;
 }
