@@ -26,15 +26,17 @@ function quickSort(arr) {
   _quickSort(arr, 0, arr.length);
 }
 
-function SortNode(from, to) {
-  this.from = from;
-  this.to = to;
-}
-SortNode.prototype.getChildren = function(l) {
-  return [new SortNode(this.from, l), new SortNode(l+1, this.to)];
-}
-SortNode.prototype.isValid = function() {
-  return (this.to - this.from >= 2);
+class SortNode {
+  constructor(from, to) {
+    this.from = from;
+    this.to = to;
+  }
+  getChildren(l) {
+    return [new SortNode(this.from, l), new SortNode(l+1, this.to)];
+  }
+  isValid() {
+    return (this.to - this.from >= 2);
+  }
 }
 
 function quickSortI(arr) {
