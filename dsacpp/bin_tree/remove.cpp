@@ -15,8 +15,7 @@ static int removeAt(BinNodePosi(T) x) {
     return 0;
   }
   int n = 1 + removeAt(x -> lc) + removeAt(x -> rc);
-  // ？？？
-  // release(x -> data);
-  // release(x);
+  release(x -> data);
+  release(x);
   return n;
 }

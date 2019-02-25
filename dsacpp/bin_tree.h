@@ -1,6 +1,8 @@
 #pragma once
 #include "./bin_node.h"
 
+#include "release.h"
+
 template <typename T> class BinTree {
 protected:
   int _size;

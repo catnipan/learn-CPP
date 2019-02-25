@@ -14,6 +14,10 @@ int main() {
   auto nr = bt.insertAsRC(root, 12);
   bt.insertAsLC(nr, 13);
   bt.insertAsRC(nr, 15);
+  //     14
+  //   10  12
+  // 5    13 15
+  //  3
   std::cout << "-------Pre-order-------" << std::endl;
   bt.travPre(printInt);
   std::cout << std::endl << "--------In-order-------" << std::endl;
