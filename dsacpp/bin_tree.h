@@ -1,6 +1,6 @@
 #pragma once
 #include "./bin_node.h"
-
+#include <iostream>
 #include "release.h"
 
 template <typename T> class BinTree {
@@ -47,6 +47,8 @@ public:
   bool operator==(BinTree<T> const& t) {
     return _root && t._root && (_root == t._root);
   }
+  template <typename S>
+  friend std::ostream& operator<<(std::ostream&, BinTree<S>&);
 };
 
 #include "bin_tree/update_height.cpp"
@@ -54,3 +56,4 @@ public:
 #include "bin_tree/attach.cpp"
 #include "bin_tree/secede.cpp"
 #include "bin_tree/remove.cpp"
+#include "bin_tree/ostream.cpp"
