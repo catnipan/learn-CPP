@@ -9,7 +9,8 @@ template <typename T> bool AVLTree<T>::remove(const T& e) {
   this->_size--;
   for (BinNodePosi(T) g = this->_hot; g; g = g -> parent) {
     if (!AvlBalanced(*g)) {
-      g = FromParentTo(*g) = this->rotateAt(tallerChild(tallerChild(g)));
+      auto& fromParentPtr{FromParentTo(*g)};
+      g = fromParentPtr = this->rotateAt(tallerChild(tallerChild(g)));
     }
     this->updateHeight(g);
   }

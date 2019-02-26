@@ -10,7 +10,8 @@ BinNodePosi(T) AVLTree<T>::insert(const T& e) {
   this->_size++;
   for (BinNodePosi(T) g = this->_hot; g; g = g -> parent) {
     if (!AvlBalanced(*g)) {
-      FromParentTo(*g) = this->rotateAt(tallerChild(tallerChild(g)));
+      auto& fromParentPtr{FromParentTo(*g)};
+      fromParentPtr = this->rotateAt(tallerChild(tallerChild(g)));
       // after this adjustment
       // height of g's ancestors remains unchanged, we could break and stop tracing upward
       break;
