@@ -16,11 +16,21 @@ static BinNodePosi(T) removeAt(BinNodePosi(T) & x, BinNodePosi(T) & hot) {
   BinNodePosi(T) w = x; // w will be node to be removed
   BinNodePosi(T) succ = nullptr; // succ will be the only child of w
   if (!HasLChild(*x)) {
+    //    |
+    //    w
+    //  .   r
     succ = x = x -> rc;
   } else if (!HasRChild(*x)) {
+    //    |
+    //    w
+    //  l   .
     succ = x = x -> lc;
   } else {
     w = w -> succ();
+    //    |
+    //    x
+    //  l    r
+    //     w
     swap(x -> data, w -> data);
     BinNodePosi(T) u = w -> parent;
     ((u == x) ? u->rc : u->lc) = succ = w -> rc;
